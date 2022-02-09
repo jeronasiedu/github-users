@@ -161,16 +161,19 @@ const App = () => {
               </div>
             </div>
             <div className="text-base">
-              <div className="flex justify-between text-white mb-2 ">
-                <h3>Public Repos</h3>
-                <a
-                  href={data.html_url}
-                  className="uppercase text-gray-400"
-                  target="_blank"
-                >
-                  see all
-                </a>
-              </div>
+              {repos.length > 0 && (
+                <div className="flex justify-between text-white mb-2 ">
+                  <h3>Public Repos</h3>
+                  <a
+                    href={data.html_url}
+                    className="uppercase text-gray-400"
+                    target="_blank"
+                  >
+                    see all
+                  </a>
+                </div>
+              )}
+
               <div className=" flex gap-1  overflow-x-auto w-full xs:flex-wrap snap-mandatory snap-x slider ">
                 {repos.slice(0, 10).map((item) => (
                   <div className="p-3 bg-secondary rounded w-3/5 flex-shrink-0 xs:flex-shrink special-width snap-center transition duration-500 snap-always hover:shadow-xl ">
