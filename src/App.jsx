@@ -113,16 +113,16 @@ const App = () => {
               )}
 
               <div className="flex mt-2 gap-3">
-                <p className="text-gray-300 text-sm xs:text-base">
+                <p className="text-gray-300 text-sm xs:text-base safari-gap-text">
                   <span className="text-white">
                     {data.followers && millify(data.followers)}
                   </span>{' '}
                   Followers
                 </p>
-                <p className="text-gray-300 text-sm xs:text-base">
+                <p className="text-gray-300 text-sm xs:text-base safari-gap-text">
                   <span className="text-white">{data.following}</span> Following
                 </p>
-                <p className="text-gray-300 text-sm xs:text-base">
+                <p className="text-gray-300 text-sm xs:text-base safari-gap-text">
                   <span className="text-white">{data.public_repos}</span> Public
                   Repos
                 </p>
