@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+body {
+  margin: 0;
+  font-family: 'open sans', 'poppins';
+  padding: 0;
+}
+input,
+button {
+  font-family: inherit;
+}
+.special-width {
+  overscroll-behavior: contain;
+}
+
+@media only screen and (min-width: 480px) {
+  .special-width {
+    width: calc(50% - 0.25rem);
+  }
+}
