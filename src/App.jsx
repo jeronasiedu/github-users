@@ -7,14 +7,7 @@ import {
   BsFolder2Open,
   BsStar,
 } from 'react-icons/all'
-import {
-  Audio,
-  Bars,
-  LineWave,
-  MutatingDots,
-  Puff,
-  ThreeCircles,
-} from 'react-loader-spinner'
+import { Audio } from 'react-loader-spinner'
 import millify from 'millify'
 const App = () => {
   const url = 'https://api.github.com/users'
@@ -75,12 +68,7 @@ const App = () => {
         </div>
       ) : loading ? (
         <div>
-          <ThreeCircles
-            height="100"
-            width="100"
-            color="#ffc8c5"
-            ariaLabel="loading"
-          />
+          <Audio height="100" width="100" color="#5b616f" ariaLabel="loading" />
         </div>
       ) : (
         data.login && (
