@@ -64,8 +64,10 @@ const App = () => {
       </form>
       {/* GITHUB USER  */}
       {searchedBefore && !data.login ? (
-        <div>
-          <h2>Not found</h2>
+        <div className="mt-3">
+          <h2 className="text-xl text-red-500 bg-red-300 p-2 rounded animate-pulse">
+            Not found
+          </h2>
         </div>
       ) : loading ? (
         <div>
