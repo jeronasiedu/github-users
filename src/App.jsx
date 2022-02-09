@@ -163,7 +163,11 @@ const App = () => {
             <div className="text-base">
               {repos.length > 0 && (
                 <div className="flex justify-between text-white mb-2 ">
-                  <h3>Public Repos</h3>
+                  {repos.length > 1 ? (
+                    <h3>Public Repos</h3>
+                  ) : (
+                    <h3>Public Repo</h3>
+                  )}
                   <a
                     href={data.html_url}
                     className="uppercase text-gray-400"
