@@ -26,7 +26,6 @@ const App = () => {
       const reposResponse = await fetch(`${url}/${username}/repos`)
       const resposResults = await reposResponse.json()
       setRepos(resposResults)
-      console.log(repos)
       console.log(data)
       setUsername('')
       setLoading(false)
@@ -34,6 +33,13 @@ const App = () => {
     } catch (error) {
       console.log(error.response)
       setLoading(false)
+    }
+  }
+  const blogUrl = () => {
+    if (data.blog.startsWith('https://')) {
+      return data.blog
+    } else {
+      return `https://${data.blog}`
     }
   }
   return (
@@ -49,7 +55,7 @@ const App = () => {
         <input
           type="search"
           className="placeholder:text-sm w-full rounded-lg bg-secondary p-2 pl-9 outline-none text-white"
-          placeholder="Search for developers "
+          placeholder="Search for developer "
           spellCheck="false"
           value={username}
           onChange={(e) => {
@@ -125,7 +131,7 @@ const App = () => {
                 {data.blog && (
                   <a
                     className="bg-primary text-gray-400 rounded-md p-1 flex items-center"
-                    href={data.blog}
+                    href={blogUrl()}
                     target="_blank"
                   >
                     <span>
@@ -179,8 +185,11 @@ const App = () => {
               )}
 
               <div className=" flex gap-1  overflow-x-auto w-full xs:flex-wrap snap-mandatory snap-x slider ">
-                {repos.slice(0, 10).map((item) => (
-                  <div className="p-3 bg-secondary rounded w-3/5 flex-shrink-0 xs:flex-shrink special-width snap-center transition duration-500 snap-always hover:shadow-xl ">
+                {repos.slice(0, 10).map((item, i) => (
+                  <div
+                    key={i}
+                    className="p-3 bg-secondary rounded w-3/5 flex-shrink-0 xs:flex-shrink special-width snap-center transition duration-500 snap-always hover:shadow-xl "
+                  >
                     <div className=" flex justify-between items-center ">
                       <BsFolder2Open className="text-white" size={20} />
                       <span className="text-white flex gap-1 items-center">
