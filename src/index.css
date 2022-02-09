@@ -43,3 +43,12 @@ html::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #16181d;
 }
+/* SAFARI GAP */
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .safari-gap:not(:last-child) {
+    margin-right: 0.25rem;
+  }
+  .safari-gap-text:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}

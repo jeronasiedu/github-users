@@ -127,7 +127,7 @@ const App = () => {
                   Repos
                 </p>
               </div>
-              <div className="mt-2 flex flex-wrap gap-2">
+              <div className="mt-2 flex flex-wrap space-x-2">
                 {data.blog && (
                   <a
                     className="bg-primary text-gray-400 rounded-md p-1 flex items-center"
@@ -188,7 +188,7 @@ const App = () => {
                 {repos.slice(0, 10).map((item, i) => (
                   <div
                     key={i}
-                    className="p-3 bg-secondary rounded w-3/5 flex-shrink-0 xs:flex-shrink special-width snap-center transition duration-500 snap-always hover:shadow-xl "
+                    className="p-3 bg-secondary rounded w-3/5 flex-shrink-0 xs:flex-shrink special-width snap-center transition duration-500 snap-always hover:shadow-xl safari-gap "
                   >
                     <div className=" flex justify-between items-center ">
                       <BsFolder2Open className="text-white" size={20} />
