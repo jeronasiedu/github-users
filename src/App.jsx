@@ -33,6 +33,7 @@ const App = () => {
       setSearchedBefore(true)
     } catch (error) {
       console.log(error.response)
+      setLoading(false)
     }
   }
   return (
@@ -78,7 +79,11 @@ const App = () => {
               <div className="flex justify-between items-start">
                 <div className="">
                   <div className="overflow-hidden w-24 aspect-square rounded-full">
-                    <img src={data.avatar_url} alt="user image" />
+                    <img
+                      src={data.avatar_url}
+                      alt="user image"
+                      className="object-cover"
+                    />
                   </div>
                   <p className="text-white font text-lg tracking-wide">
                     {data.name}
@@ -164,7 +169,7 @@ const App = () => {
                   see all
                 </a>
               </div>
-              <div className=" flex gap-1  overflow-x-auto w-full xs:flex-wrap snap-mandatory snap-x ">
+              <div className=" flex gap-1  overflow-x-auto w-full xs:flex-wrap snap-mandatory snap-x slider ">
                 {repos.slice(0, 10).map((item) => (
                   <div className="p-3 bg-secondary rounded w-3/5 flex-shrink-0 xs:flex-shrink special-width snap-center transition duration-500 snap-always hover:shadow-xl ">
                     <div className=" flex justify-between items-center ">
@@ -175,7 +180,7 @@ const App = () => {
                         <BsStar />
                       </span>
                     </div>
-                    <p className="text-gray-300">A{item.name}</p>
+                    <p className="text-gray-300">{item.name}</p>
                     <p className="text-gray-400 text-sm">
                       {item.description
                         ? item.description
